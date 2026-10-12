@@ -1,105 +1,117 @@
-![DTE](image/title_logo.png)
+# Интернет-магазин цифровой и бытовой техники
 
-## DTE | Магазин цифровой и бытовой техники
+Backend веб-приложения интернет-магазина на **Django и Django REST Framework**. Проект включает каталог товаров, управление пользователями и заказами, REST API, административную панель и инструменты мониторинга.
 
-[![DTE](https://img.shields.io/badge/DTE-Интернет%20магазин-blue?logo=reasonstudios)](http://158.160.171.230:8000/shop/) [![Video](https://img.shields.io/badge/Видео-Демонстрация%20сайта-brightgreen?&logo=youtube&logoColor=red&labelColor=grey)](https://drive.google.com/file/d/1zCxhZMp4mwBI0tb13hLB87c12Yk4cJYL/view?usp=sharing)
+## Возможности
 
-> [!IMPORTANT]
-> ip-адрес сайта меняется каждые 24 часа
+- **Каталог товаров:** просмотр, поиск, фильтрация и сортировка.
+- **Управление товарами:** создание и редактирование, загрузка изображений, архивирование.
+- **Пользователи:** регистрация, авторизация и профиль пользователя.
+- **Заказы:** оформление и управление заказами.
+- **REST API:** взаимодействие с данными магазина через Django REST Framework.
+- **Экспорт данных:** выгрузка товаров в CSV.
+- **Документация API:** Swagger UI и ReDoc на базе `drf-spectacular`.
+- **Административная панель:** управление данными через Django Admin.
+- **Мониторинг:** сбор логов с использованием Grafana и Loki.
+- **Дополнительные приложения:** блог и обработка данных запросов.
+- **Docker:** запуск приложения и инфраструктурных сервисов в контейнерах.
 
-### Технологии
+## Технологии
 
-- Создан с помощью фреймворка: ***Django 6.0***  
-- База данных ***SQLite3 + Django ORM***.  
-- Логирование: ***Grafana + Loki***.  
-- Профилирование: ***Django debug toolbar***.  
-- Проверка форматирования: ***flake8***.  
-- Проверка аннотаций с помощью: ***Pylance***.  
-- Осуществлена локализация и интернационализация приложения.  
-- При создании API и интерактивной документации использованы технологии: ***Django REST Framework***, ***DRF-spectacular***.  
+- **Язык:** Python 3.12+
+- **Backend:** Django, Django REST Framework
+- **База данных:** SQLite
+- **Кеширование:** Django FileBasedCache
+- **API-документация:** drf-spectacular, Swagger UI, ReDoc
+- **Инфраструктура:** Docker, Docker Compose
+- **Мониторинг:** Grafana, Loki
+- **Дополнительно:** Django Filter, Pillow, Argon2
 
-### Скриншоты
+## Структура проекта
 
-<table>
-  <tr>
-    <td>
-      <img src="image/Main.png" alt="Main">
-      <div align="center">Главная страница</div>
-    </td>
-    <td>
-      <img src="image/Signup.png" alt="Signup">
-      <div align="center">Регистрация</div>
-    </td>
-    <td>
-      <img src="image/Profile.png" alt="Profile">
-      <div align="center">Профиль </div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="image/Catalog.png" alt="Catalog">
-      <div align="center">Каталог</div>
-    </td>
-    <td>
-      <img src="image/Orders.png" alt="Orders">
-      <div align="center">Заказы</div>
-    </td>
-    <td>
-      <img src="image/Articles.png" alt="Articles">
-      <div align="center">Статьи</div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="image/Product.png" alt="Product">
-      <div align="center">Карточка продукта</div>
-    </td>
-    <td>
-      <img src="image/OrderCreate.png" alt="OrderCreate">
-      <div align="center">Создание заказа</div>
-    </td>
-    <td>
-      <img src="image/Users.png" alt="Users">
-      <div align="center">Список пользователей</div>
-    </td>
-  </tr>
-</table>
-<br>
-<table>
-  <tr>
-    <td>
-      <img src="image/Grafana.png" alt="Grafana">
-      <div align="center">Логи в Grafana + Loki</div>
-    </td>
-    <td>
-      <img src="image/Debug_toolbar.png" alt="Debug toolbar">
-      <div align="center">Debug toolbar</div>
-    </td>
-    <td>
-      <img src="image/AdminDoc.png" alt="AdminDoc">
-      <div align="center">Документация в админ. панели</div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="image/REST.png" alt="REST">
-      <div align="center">REST Framework</div>
-    </td>
-    <td>
-      <img src="image/Swagger.png" alt="Swagger">
-      <div align="center">Swagger документация</div>
-    </td>
-    <td>
-      <img src="image/Redoc.png" alt="Redoc">
-      <div align="center">Redoc документация</div>
-    </td>
-  </tr>
-</table>
+```text
+django-ecommerce/
+├── mysite/
+│   ├── accounts/       # Пользователи и профили
+│   ├── shopapp/        # Каталог товаров и заказы
+│   ├── myapiapp/       # REST API
+│   ├── blogapp/        # Блог
+│   ├── requestdataapp/ # Обработка данных запросов
+│   ├── mysite/         # Настройки и маршруты проекта
+│   └── manage.py
+├── image/              # Скриншоты и материалы проекта
+├── Dockerfile
+├── docker-compose.yaml
+├── pyproject.toml
+└── README.md
+```
 
-<br>
-<br>
-<br>
+## Запуск проекта
 
-<div align="center">
-  <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="500" height="300"/>
-</div>
+### Требования
+
+- Docker и Docker Compose
+- Git
+
+### Запуск через Docker Compose
+
+1. Клонируйте репозиторий:
+
+   ```bash
+   git clone https://github.com/ViktorBelik/django-ecommerce.git
+   cd django-ecommerce
+   ```
+
+2. Создайте файл `.env` на основе шаблона:
+
+   ```bash
+   cp .env.template .env
+   ```
+
+   Проверьте переменные окружения и задайте собственный секретный ключ Django. Не используйте демонстрационные значения для публичного развертывания.
+
+3. Запустите контейнеры:
+
+   ```bash
+   docker compose up --build
+   ```
+
+4. Откройте приложение:
+
+   - Магазин: http://127.0.0.1:8000/shop/
+   - Административная панель: http://127.0.0.1:8000/admin/
+   - Swagger UI: http://127.0.0.1:8000/api/schema/swagger/
+   - ReDoc: http://127.0.0.1:8000/api/schema/redoc/
+   - Схема API: http://127.0.0.1:8000/api/schema/
+
+> **Примечание:** конфигурация Docker Compose предназначена прежде всего для разработки. Перед использованием в production необходимо настроить безопасные параметры Django, сервер приложений, статические и пользовательские файлы, а также доступ к мониторингу.
+
+## Работа с API
+
+API предоставляет доступ к данным приложения через Django REST Framework. Документация доступна в Swagger UI и ReDoc после запуска проекта.
+
+Основные маршруты API подключены через `/api/`. Конкретные endpoints, методы HTTP и требования к авторизации следует проверять в документации запущенного приложения.
+
+## Скриншоты
+
+### Интерфейс магазина
+
+| Главная страница | Каталог | Карточка товара |
+|---|---|---|
+| ![Главная страница](image/Main.png) | ![Каталог](image/Catalog.png) | ![Карточка товара](image/Product.png) |
+
+### Пользователи и заказы
+
+| Регистрация | Профиль | Заказы |
+|---|---|---|
+| ![Регистрация](image/Signup.png) | ![Профиль](image/Profile.png) | ![Заказы](image/Orders.png) |
+
+### API и мониторинг
+
+| Swagger UI | ReDoc | Grafana |
+|---|---|---|
+| ![Swagger UI](image/Swagger.png) | ![ReDoc](image/Redoc.png) | ![Grafana](image/Grafana.png) |
+
+## Цель проекта
+
+Проект предназначен для практики разработки backend-приложений на Python и демонстрирует работу с Django, REST API, моделями данных, авторизацией, обработкой изображений, контейнеризацией и мониторингом.
